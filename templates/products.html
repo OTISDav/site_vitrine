@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Nos Produits{% endblock %}
+<!--{% block title %}Nos Produits{% endblock %}-->
 
 {% block content %}
-<h2>Nos Produits</h2>
+<!--<h2>Nos Produits</h2>-->
 <ul>
     {% for product in products %}
-    <li>
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:150px;">
+    <ul>
         <h3>{{ product.name }}</h3>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:150px;">
         <p>{{ product.description }}</p>
 <!--        <p><strong>Prix :</strong> {{ product.price }} €</p>-->
-    </li>
+    </ul>
     {% endfor %}
 </ul>
 {% endblock %}

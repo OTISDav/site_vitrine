@@ -23,11 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-#%-v*6%t@+v4g_d2@^r#-o!1alq9o-zp=e@xr_0kg5$29mx7b1"
+ADMIN_EMAIL = 'ddavidotis@gmail.com'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '7234-2c0f-f0f8-871-f100-b123-1091-15bd-8c18.ngrok-free.app']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://7234-2c0f-f0f8-871-f100-b123-1091-15bd-8c18.ngrok-free.app',
+    # Ajouter d'autres domaines si nécessaire
+]
 
 
 # Application definition
@@ -83,6 +89,13 @@ DATABASES = {
     }
 }
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = "apikey"  # Ce mot de passe est le "API Key" de SendGrid
+EMAIL_HOST_PASSWORD = "SG.0rZrdqsTRLmlaW9ButRkdw.Pd74Rp1Ax8LUCntm3f7JAiTcfeNnlbNTiwlfcBgJJdICopied!"
+DEFAULT_FROM_EMAIL = "davidbotcholi2003@gmail.com"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
