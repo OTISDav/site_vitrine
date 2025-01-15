@@ -1,9 +1,68 @@
 {% extends 'base.html' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil, Produits, et Rendez-vous{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+{% endblock %}
 
 {% block content %}
 <h2>Bienvenue sur notre site</h2>
 <p>Nous vous proposons les meilleurs produits de café et de cacao directement issus des producteurs locaux.</p>
 <a href="/products/">Voir nos produits</a>
+
+
+
+
+<!--<h2>Nos Produits</h2>-->
+<ul>
+    {% for product in products %}
+    <ul>
+        <h3>{{ product.name }}</h3>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:500px;">
+        <p>{{ product.description }}</p>
+<!--        <p><strong>Prix :</strong> {{ product.price }} €</p>-->
+    </ul>
+    {% endfor %}
+</ul>
+
+
+
+
+<h1>Prendre un rendez-vous</h1>
+<form method="post" action="{% url 'book_appointment' %}">
+    {% csrf_token %}
+    <label for="name">Nom :</label>
+    <input type="text" name="name" id="name" placeholder="Entrez votre nom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" name="email" id="email" placeholder="Entrez votre email" required>
+
+    <label for="date">Date :</label>
+    <input type="text" name="date" id="date" placeholder="Choisissez une date" required>
+
+    <label for="time">Heure :</label>
+    <input type="text" name="time" id="time" placeholder="Choisissez une heure" required>
+
+    <button type="submit">Prendre rendez-vous</button>
+</form>
+{% endblock %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    // Initialisation du calendrier (Flatpickr) pour la date
+    flatpickr("#date", {
+        dateFormat: "Y-m-d",  // Format de la date
+        minDate: "today",  // Empêcher la sélection de dates passées
+    });
+
+    // Initialisation du sélecteur d'heure (Flatpickr) pour l'heure
+    flatpickr("#time", {
+        enableTime: true,  // Activer le sélecteur d'heure
+        noCalendar: true,  // Désactiver le calendrier
+        dateFormat: "H:i",  // Format de l'heure
+        time_24hr: true,  // Heure en format 24h
+    });
+</script>
 {% endblock %}

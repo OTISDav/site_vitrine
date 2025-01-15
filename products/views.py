@@ -24,6 +24,12 @@ def contact(request):
 # from .send_email import send_email  # Assurez-vous d'importer la fonction send_email
 from django.conf import settings
 
+from django.conf import settings
+from twilio.rest import Client
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import AppointmentForm
+
 def book_appointment(request):
     if request.method == "POST":
         form = AppointmentForm(request.POST)
@@ -36,6 +42,25 @@ def book_appointment(request):
             email = appointment.email
             date = appointment.date
             time = appointment.time
+
+            # Notification WhatsApp à l'administrateur
+            try:
+                client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+                message_body = f"""
+                Nouvelle réservation de rendez-vous :
+                Nom : {name}
+                Email : {email}
+                Date : {date}
+                Heure : {time}
+                """
+                client.messages.create(
+                    from_=settings.TWILIO_WHATSAPP_NUMBER,
+                    to=settings.ADMIN_WHATSAPP_NUMBER,
+                    body=message_body
+                )
+                print("Notification WhatsApp envoyée à l'administrateur.")
+            except Exception as e:
+                print(f"Erreur lors de l'envoi de la notification WhatsApp : {e}")
 
             # Ajouter un message de confirmation à l'utilisateur
             messages.success(request, "Votre rendez-vous a été pris avec succès.")

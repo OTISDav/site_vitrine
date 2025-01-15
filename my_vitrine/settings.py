@@ -28,10 +28,10 @@ ADMIN_EMAIL = 'ddavidotis@gmail.com'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '7234-2c0f-f0f8-871-f100-b123-1091-15bd-8c18.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '6cb9-2c0f-f0f8-871-f100-246f-4071-cacb-c22a.ngrok-free.app']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://7234-2c0f-f0f8-871-f100-b123-1091-15bd-8c18.ngrok-free.app',
+    'https://6cb9-2c0f-f0f8-871-f100-246f-4071-cacb-c22a.ngrok-free.app',
     # Ajouter d'autres domaines si nécessaire
 ]
 
@@ -90,12 +90,10 @@ DATABASES = {
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.sendgrid.net"
-EMAIL_PORT = 465
-EMAIL_USE_TLS = False
-EMAIL_HOST_USER = "apikey"  # Ce mot de passe est le "API Key" de SendGrid
-EMAIL_HOST_PASSWORD = "SG.0rZrdqsTRLmlaW9ButRkdw.Pd74Rp1Ax8LUCntm3f7JAiTcfeNnlbNTiwlfcBgJJdICopied!"
-DEFAULT_FROM_EMAIL = "davidbotcholi2003@gmail.com"
+TWILIO_ACCOUNT_SID = 'ACe32519e4d5899197209542c905035f8a'  # Votre Account SID Twilio
+TWILIO_AUTH_TOKEN = '355a80afec1c12db49865f0d40a301be'  # Votre Auth Token Twilio
+TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'  # Numéro WhatsApp Twilio Sandbox
+ADMIN_WHATSAPP_NUMBER = 'whatsapp:+22891753075'  # Numéro WhatsApp de l'admin
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
