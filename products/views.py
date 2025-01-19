@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Product, ContactMessage
-from django.http import HttpResponse
-from django.contrib import messages
-from .forms import AppointmentForm
+from .models import Product
+
 
 def home(request):
     products = Product.objects.all()
