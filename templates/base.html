@@ -10,13 +10,34 @@
     {% block css %}{% endblock %}
 </head>
 <body>
-    <header>
-        <h1>Site Vitrine de Café et Cacao</h1>
-        <nav>
-            <a href="/">HOME</a>
-            <a href="/rendezvous/">CONSULTING</a>
-        </nav>
+    <header style="background-image: url('static/image/Cacao.jpeg'); background-size: cover; background-position: center; text-align: center; position: relative; height: 300px;">
+        <!-- Le logo centré -->
+        <img src="static/image/logo.png" alt="Logo" style=" position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto;">
     </header>
+
+
+    <div>
+        <nav style="text-align: center; background-color: transparent; padding: 10px;">
+            <a href="/" style="color: brown; margin-right: 15px; text-decoration: none; transition: color 0.3s ease;
+                cursor: pointer;"
+                onmouseover="this.style.color='green'"
+                onmouseout="this.style.color='brown'"
+                onmousedown="this.style.color='darkgreen'"
+                onmouseup="this.style.color='green'">
+                HOME
+            </a>
+            <a href="/rendezvous/" style="color: brown; text-decoration: none; transition: color 0.3s ease;
+                cursor: pointer;"
+                onmouseover="this.style.color='green'"
+                onmouseout="this.style.color='brown'"
+                onmousedown="this.style.color='darkgreen'"
+                onmouseup="this.style.color='green'">
+                CONSULTING
+            </a>
+        </nav>
+
+    </div>
+
     <main>
         {% block content %}{% endblock %}
     </main>

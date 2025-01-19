@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 
+{% block title %}Accueil, Produits, et Rendez-vous{% endblock %}
+
 {% block css %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 {% endblock %}
 
 {% block content %}
 
+    <div class="mm" style="text-align: center; margin: 0 auto; max-width: 600px;">
+    <p>
+        Lizou Commodity offers tailored consulting services to help businesses navigate their raw material transactions with ease. From selecting suppliers to managing logistics, transportation, and regulatory compliance, we support you at every stage. Whether you're importing or exporting, our expertise ensures streamlined, secure operations, reducing costs and mitigating risks. Count on our experience to confidently manage your international projects and achieve success.
+    </p>
+    <!--<a href="/products/">Voir nos produits</a>-->
+    </div>
     <div class="calendly-inline-widget" data-url="https://calendly.com/davidbotcholi2003/30min" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 {% endblock %}

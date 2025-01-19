@@ -3,13 +3,23 @@
 {% block title %}Accueil, Produits, et Rendez-vous{% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 {% endblock %}
 
 {% block content %}
-<h2>Bienvenue sur notre site</h2>
-<p>Nous vous proposons les meilleurs produits de café et de cacao directement issus des producteurs locaux.</p>
-<!--<a href="/products/">Voir nos produits</a>-->
+
+<div class="mm" style="text-align: center; margin: 0 auto; max-width: 600px;">
+    <h2 style="font-weight: bold; font-family: 'Arial', sans-serif;">WE EXPORT AGRICULTURAL PRODUCTS FROM AFRICA TO ALL OVER THE WORLD</h2>
+    <p>
+        With our extensive experience in global trade, we deliver high-quality food and agricultural products at the most competitive prices to every qualified buyer. We prioritize safe and reliable transaction processes, ensuring our clients can secure long-term contracts that meet their required quantities and pricing.
+    </p>
+    <!--<a href="/products/">Voir nos produits</a>-->
+</div>
+
+
+
+<div class="mm" style="text-align: center; margin: 0 auto; max-width: 600px;">
+    <h1>OUR PRODUCTS</h1>
+</div>
 
 
 
@@ -32,20 +42,4 @@
 {% endblock %}
 
 {% block js %}
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-    // Initialisation du calendrier (Flatpickr) pour la date
-    flatpickr("#date", {
-        dateFormat: "Y-m-d",  // Format de la date
-        minDate: "today",  // Empêcher la sélection de dates passées
-    });
-
-    // Initialisation du sélecteur d'heure (Flatpickr) pour l'heure
-    flatpickr("#time", {
-        enableTime: true,  // Activer le sélecteur d'heure
-        noCalendar: true,  // Désactiver le calendrier
-        dateFormat: "H:i",  // Format de l'heure
-        time_24hr: true,  // Heure en format 24h
-    });
-</script>
 {% endblock %}
