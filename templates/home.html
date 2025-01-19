@@ -2,44 +2,106 @@
 
 {% block title %}Accueil, Produits, et Rendez-vous{% endblock %}
 
-{% block css %}
-{% endblock %}
-
 {% block content %}
+    <div style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; box-sizing: border-box; text-align: center;">
 
-<div class="mm" style="text-align: center; margin: 0 auto; max-width: 600px;">
-    <h2 style="font-weight: bold; font-family: 'Arial', sans-serif;">WE EXPORT AGRICULTURAL PRODUCTS FROM AFRICA TO ALL OVER THE WORLD</h2>
-    <p>
-        With our extensive experience in global trade, we deliver high-quality food and agricultural products at the most competitive prices to every qualified buyer. We prioritize safe and reliable transaction processes, ensuring our clients can secure long-term contracts that meet their required quantities and pricing.
-    </p>
-    <!--<a href="/products/">Voir nos produits</a>-->
-</div>
+        <!-- Section principale avec le texte -->
+        <div style="margin: 0 auto; max-width: 600px; padding: 20px;">
+            <h2 style="font-weight: bold;">WE EXPORT AGRICULTURAL PRODUCTS FROM AFRICA TO ALL OVER THE WORLD</h2>
+            <p>
+                With our extensive experience in global trade, we deliver high-quality food and agricultural products at the most competitive prices to every qualified buyer. We prioritize safe and reliable transaction processes, ensuring our clients can secure long-term contracts that meet their required quantities and pricing.
+            </p>
+        </div>
 
+        <!-- Section produits -->
+        <div style="color :red; margin: 0 auto; max-width: 600px; padding: 20px;">
+            <h1>OUR PRODUCTS</h1>
+        </div>
 
+        <!-- Affichage des produits -->
+        {% for product in products %}
+        <div style="margin: 0 auto; padding: 20px; max-width: 600px; text-align: center;">
+            <!-- Nom du produit -->
+            <div style="color : green; margin-bottom: 20px;">
+                <h3 style="text-transform: uppercase; font-weight: bold;">{{ product.name }}</h3>
+            </div>
+            <!-- Image du produit -->
+            <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" style="max-height: 500px; width: auto; object-fit: contain; border-radius: 10px; transition: transform 0.3s ease;">
+            </div>
+        </div>
+        {% endfor %}
 
-<div class="mm" style="text-align: center; margin: 0 auto; max-width: 600px;">
-    <h1>OUR PRODUCTS</h1>
-</div>
+        <!-- Widget Calendly -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/davidbotcholi2003/30min" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
+        <!-- Style directement intégré dans la balise <style> -->
+        <style>
+            /* Effet sur l'image */
+            .product img:hover {
+                transform: scale(1.05);
+            }
 
+            /* Media Queries pour les écrans plus petits (téléphones) */
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 1.5rem;
+                }
 
-{% for product in products %}
+                h2 {
+                    font-size: 1.2rem;
+                }
 
-<div class="product">
-        <!-- Nom du produit au-dessus de l'image -->
-    <div class="title" style="text-align: center; margin-bottom: 20px;">
-        <h3 class="text-uppercase fw-bold">{{ product.name }}</h3>
+                p {
+                    font-size: 1rem;
+                    padding: 0 10px;
+                }
+
+                .product-image {
+                    max-height: 50px;
+                    width: 500%;
+                    object-fit: contain;
+                }
+
+                .calendly-inline-widget {
+                    min-width: 100%;
+                    height: 500px;
+                }
+            }
+
+            /* Media Queries pour les très petits écrans */
+            @media (max-width: 270px) {
+                h1 {
+                    font-size: 1.2rem;
+                }
+
+                h2 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                    padding: 0 5px;
+                }
+
+                .product img {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 30px;
+                    max-height: 500px;
+                    width: auto;
+                    object-fit: contain;
+                    border-radius: 10px;
+                    transition: transform 0.3s ease;
+                }
+
+                .calendly-inline-widget {
+                    min-width: 100%;
+                    height: 400px;
+                }
+            }
+        </style>
     </div>
-    <div class="image" style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-height: 500px; width: auto; object-fit: contain; border-radius: 10px;">
-    </div>
-
-</div>
-{% endfor %}
-
-<div class="calendly-inline-widget" data-url="https://calendly.com/davidbotcholi2003/30min" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-{% endblock %}
-
-{% block js %}
 {% endblock %}
