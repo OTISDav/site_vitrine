@@ -5,7 +5,9 @@ from django.contrib import messages
 from .forms import AppointmentForm
 
 def home(request):
-    return render(request, 'home.html')
+    products = Product.objects.all()
+    return render(request, 'home.html', {'products': products})
+
 
 def products(request):
     products = Product.objects.all()

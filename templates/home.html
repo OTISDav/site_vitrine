@@ -9,43 +9,26 @@
 {% block content %}
 <h2>Bienvenue sur notre site</h2>
 <p>Nous vous proposons les meilleurs produits de café et de cacao directement issus des producteurs locaux.</p>
-<a href="/products/">Voir nos produits</a>
+<!--<a href="/products/">Voir nos produits</a>-->
 
 
 
+{% for product in products %}
 
-<!--<h2>Nos Produits</h2>-->
-<ul>
-    {% for product in products %}
-    <ul>
-        <h3>{{ product.name }}</h3>
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:500px;">
-        <p>{{ product.description }}</p>
-<!--        <p><strong>Prix :</strong> {{ product.price }} €</p>-->
-    </ul>
-    {% endfor %}
-</ul>
+<div class="product">
+        <!-- Nom du produit au-dessus de l'image -->
+    <div class="title" style="text-align: center; margin-bottom: 20px;">
+        <h3 class="text-uppercase fw-bold">{{ product.name }}</h3>
+    </div>
+    <div class="image" style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-height: 500px; width: auto; object-fit: contain; border-radius: 10px;">
+    </div>
 
+</div>
+{% endfor %}
 
-
-
-<h1>Prendre un rendez-vous</h1>
-<form method="post" action="{% url 'book_appointment' %}">
-    {% csrf_token %}
-    <label for="name">Nom :</label>
-    <input type="text" name="name" id="name" placeholder="Entrez votre nom" required>
-
-    <label for="email">Email :</label>
-    <input type="email" name="email" id="email" placeholder="Entrez votre email" required>
-
-    <label for="date">Date :</label>
-    <input type="text" name="date" id="date" placeholder="Choisissez une date" required>
-
-    <label for="time">Heure :</label>
-    <input type="text" name="time" id="time" placeholder="Choisissez une heure" required>
-
-    <button type="submit">Prendre rendez-vous</button>
-</form>
+<div class="calendly-inline-widget" data-url="https://calendly.com/davidbotcholi2003/30min" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 {% endblock %}
 
 {% block js %}

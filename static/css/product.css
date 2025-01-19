@@ -1,0 +1,17 @@
+.title {
+    text-align: center; /* Centre le texte horizontalement */
+    margin-bottom: 20px; /* Ajoute un espacement en bas */
+}
+
+.image {
+    display: flex; /* Active Flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin-bottom: 30px; /* Ajoute un espacement en bas */
+}
+
+.image img {
+    max-width: 100%; /* Limite la largeur de l'image */
+    height: auto; /* Garde le ratio de l'image */
+    border-radius: 10px; /* Ajoute des coins arrondis */
+}
