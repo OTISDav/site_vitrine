@@ -3,27 +3,63 @@
 {% block title %}Accueil, Produits, et Rendez-vous{% endblock %}
 
 {% block content %}
-    <div style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; box-sizing: border-box; text-align: center;">
+    <div
+            style="font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;"
+    >
 
         <!-- Section principale avec le texte -->
-        <div style="margin: 0 auto; max-width: 600px; padding: 20px;">
-            <h2 style="color:brown; font-weight: bold;">WE EXPORT AGRICULTURAL PRODUCTS FROM AFRICA TO ALL OVER THE WORLD</h2>
+        <div
+                style="margin: 0 auto;
+                max-width: 600px;
+                padding: 20px;"
+        >
+            <h2
+                    style="color:brown;
+                    font-weight: bold;"
+            >
+                WE EXPORT AGRICULTURAL PRODUCTS FROM AFRICA TO ALL OVER THE WORLD
+            </h2>
             <p style="color:brown;">
-                With our extensive experience in global trade, we deliver high-quality food and agricultural products at the most competitive prices to every qualified buyer. We prioritize safe and reliable transaction processes, ensuring our clients can secure long-term contracts that meet their required quantities and pricing.
+                With our extensive experience in global trade, we deliver high-quality food and agricultural
+                products at the most competitive prices to every qualified buyer. We prioritize safe and reliable
+                transaction processes, ensuring our clients can secure long-term contracts that meet their required
+                quantities and pricing.
             </p>
         </div>
 
         <!-- Section produits -->
-        <div style="color :green; margin: 0 auto; max-width: 600px; padding: 20px;">
+        <div
+                style="color :green;
+                margin: 0 auto;
+                max-width: 600px;
+                padding: 20px;"
+        >
             <h1>OUR PRODUCTS</h1>
         </div>
 
         <!-- Affichage des produits -->
         {% for product in products %}
-        <div style="margin: 0 auto; padding: 20px; max-width: 600px; text-align: center;">
+        <div
+                style="margin: 0 auto;
+                padding: 20px;
+                max-width: 600px;
+                text-align: center;"
+        >
             <!-- Nom du produit -->
-            <div style="color : brown; margin-bottom: 20px; padding: 10px;">
-                <h3 style="text-transform: uppercase; font-weight: bold;">{{ product.name }}</h3>
+            <div
+                    style="color : brown;
+                    margin-bottom: 20px;
+                    padding: 10px;"
+            >
+                <h3
+                        style="text-transform: uppercase;
+                        font-weight: bold;"
+                >
+                    {{ product.name }}</h3>
             </div>
             <!-- Image du produit -->
             <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">

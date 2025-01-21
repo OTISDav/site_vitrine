@@ -10,28 +10,55 @@
     {% block css %}{% endblock %}
 </head>
 <body>
-    <header style="background-image: url('../static/image/1.jpeg'); background-size: cover; background-position: center; text-align: center; position: relative; height: 150px;">
+    <header
+            style="background-image: url('../static/image/1.jpeg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            position: relative;
+            height: 150px;"
+    >
         <!-- Le logo centré -->
-        <img src="../static/image/MMM.png" alt="Logo" style=" position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: auto;">
+        <img
+                src="../static/image/MMM.png"
+                alt="Logo"
+                style=" position: absolute; top: 65%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                 width: 300px; height: auto;"
+        >
     </header>
 
 
     <div>
-        <nav style="text-align: center; background-color: transparent; padding: 50px;">
-            <a href="/" style="color: brown; margin-right: 15px; text-decoration: none; transition: color 0.3s ease;
+        <nav
+                style="text-align: center;
+                background-color: transparent;
+                padding: 50px;"
+        >
+            <a href="/"
+               style="color: brown;
+                margin-right: 15px;
+                text-decoration: none;
+                transition: color 0.3s ease;
                 cursor: pointer;"
                 onmouseover="this.style.color='green'"
                 onmouseout="this.style.color='brown'"
                 onmousedown="this.style.color='darkgreen'"
-                onmouseup="this.style.color='green'">
+                onmouseup="this.style.color='green'"
+            >
                 HOME
             </a>
-            <a href="/rendezvous/" style="color: brown; text-decoration: none; transition: color 0.3s ease;
+            <a href="/rendezvous/"
+                style="color: brown;
+                text-decoration: none;
+                transition: color 0.3s ease;
                 cursor: pointer;"
                 onmouseover="this.style.color='green'"
                 onmouseout="this.style.color='brown'"
                 onmousedown="this.style.color='darkgreen'"
-                onmouseup="this.style.color='green'">
+                onmouseup="this.style.color='green'"
+            >
                 CONSULTING
             </a>
         </nav>
@@ -41,9 +68,20 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-    <footer>
-        <p>&copy; OtisDav 2025</p>
-        <p>Vente de Café et Cacao</p>
+    <hr>
+    <footer
+            style="width:auto;
+            height:100px;
+            padding-top:12px;
+            margin-right:10px;
+            background-color: #cda6a1;
+            text-align: center;
+            color: #fff "
+    >
+        <p>&copy; OtisDav 2025 |
+            Vente de Café et Cacao <br>
+            All Rights Reserved
+        </p>
     </footer>
     {% block js %}{% endblock %}
 </body>
