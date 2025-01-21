@@ -28,10 +28,10 @@ ADMIN_EMAIL = 'ddavidotis@gmail.com'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '2589-2c0f-f0f8-871-f100-2927-1d40-b0e0-2e9c.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '475d-2c0f-f0f8-700-2100-6151-e660-6c1d-cbc7.ngrok-free.app']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://2589-2c0f-f0f8-871-f100-2927-1d40-b0e0-2e9c.ngrok-free.app',
+    'https://475d-2c0f-f0f8-700-2100-6151-e660-6c1d-cbc7.ngrok-free.app',
     # Ajouter d'autres domaines si nécessaire
 ]
 

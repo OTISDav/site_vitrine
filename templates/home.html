@@ -27,87 +27,45 @@
             </div>
             <!-- Image du produit -->
             <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" style="max-height: 500px; width: auto; object-fit: contain; border-radius: 10px; transition: transform 0.3s ease;">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" style="max-height: 500px; width: 600px; object-fit: contain; border-radius: 10px; transition: transform 0.3s ease;">
             </div>
         </div>
         {% endfor %}
 
         <!-- Widget Calendly -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/davidbotcholi2003/30min" style="min-width:320px;height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
+        <!-- Calendly inline widget begin -->
+       <!-- Calendly inline widget begin -->
+    <div class="calendly-inline-widget" data-url="https://calendly.com/lizou557/30min" style="min-width:320px;height:700px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
         <!-- Style directement intégré dans la balise <style> -->
-        <style>
-            /* Effet sur l'image */
-            .product img:hover {
-                transform: scale(1.05);
+      <style>
+            /* Styles généraux pour les images */
+            .product-image {
+                max-width: 100%; /* L'image occupe tout l'espace disponible */
+                height: auto;    /* La hauteur s'ajuste automatiquement */
+                object-fit: contain; /* Préserve les proportions de l'image */
+                border-radius: 50px;
+                transition: transform 0.3s ease;
             }
 
-            /* Media Queries pour les écrans plus petits (téléphones) */
+            .product-image:hover {
+                transform: scale(1.05); /* Effet zoom au survol */
+            }
+
+            /* Media Queries pour les petits écrans */
             @media (max-width: 768px) {
-                h1 {
-                    font-size: 1.5rem;
-                }
-
-                h2 {
-                    font-size: 1.2rem;
-                }
-
-                p {
-                    font-size: 1rem;
-                    padding: 0 10px;
-                }
-
                 .product-image {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-bottom: 30px;
-                    max-height: 500px;
-                    width: auto;
-                    object-fit: contain;
-                    border-radius: 10px;
-                    transition: transform 0.3s ease;
-                }
-
-                .calendly-inline-widget {
-                    min-width: 100%;
-                    height: 500px;
+                    max-width: 70%; /* Réduction de la largeur pour les tablettes */
                 }
             }
 
-            /* Media Queries pour les très petits écrans */
-            @media (max-width: 270px) {
-                h1 {
-                    font-size: 1.2rem;
-                }
-
-                h2 {
-                    font-size: 1rem;
-                }
-
-                p {
-                    font-size: 0.9rem;
-                    padding: 0 5px;
-                }
-
-                .product img {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-bottom: 30px;
-                    max-height: 500px;
-                    width: auto;
-                    object-fit: contain;
-                    border-radius: 10px;
-                    transition: transform 0.3s ease;
-                }
-
-                .calendly-inline-widget {
-                    min-width: 100%;
-                    height: 400px;
+            @media (max-width: 480px) {
+                .product-image {
+                    max-width: 90%; /* Réduction supplémentaire pour les téléphones */
                 }
             }
-        </style>
+      </style>
+
     </div>
 {% endblock %}
